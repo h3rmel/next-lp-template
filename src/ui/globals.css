@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+@import "shadcn-ui.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* CSS Variables here (just uncomment the below line) */
+  /* :root { } */
+
+  * {
+    @apply box-border scroll-smooth;
+  }
+
+  body {
+    @apply m-0 p-0 w-full min-h-screen;
+  }
+
+}
+
+@layer components {}
+
+/* 
+  Others CSSs...
+*/

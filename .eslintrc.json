@@ -1,3 +1,24 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "rules": {
+    "spaced-comment": "warn",
+    // sort import statements
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always",
+        "alphabetize": { "alphabetize": "asc" }
+      }
+    ],
+    // sort named imports within an import statement
+    "sort-imports": ["warn", { "ignoreDeclarationSort": true }]
+  }
 }
