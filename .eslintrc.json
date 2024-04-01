@@ -1,24 +1,30 @@
 {
-  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "extends": ["next", "eslint-config-prettier"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {}
+    }
+  },
+  "plugins": ["import-helpers"],
   "rules": {
     "spaced-comment": "warn",
-    // sort import statements
-    "import/order": [
+    "import-helpers/order-imports": [
       "warn",
       {
+        "newlinesBetween": "always", // new line between groups
         "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
+          "/^react/",
+          "/^next/",
+          "module",
+          "/^@/ui/",
+          "/^@/_/",
+          ["parent", "sibling", "index"]
         ],
-        "newlines-between": "always",
-        "alphabetize": { "alphabetize": "asc" }
+        "alphabetize": { "order": "asc", "ignoreCase": true }
       }
-    ],
-    // sort named imports within an import statement
-    "sort-imports": ["warn", { "ignoreDeclarationSort": true }]
+    ]
   }
 }
