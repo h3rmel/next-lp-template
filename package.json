@@ -15,8 +15,7 @@
     "p:check": "prettier --check .",
     "p:write": "prettier --write .",
     "e:check": "eslint . --ext .ts,.tsx",
-    "e:lint": "eslint . --ext .ts,.tsx --fix",
-    "prepare": "husky"
+    "e:lint": "eslint . --ext .ts,.tsx --fix"
   },
   "dependencies": {
     "@next/third-parties": "^14.1.3",
